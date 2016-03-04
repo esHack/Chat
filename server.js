@@ -1,6 +1,8 @@
 var express = require("express");
 var app = express();
-var port = 3700;
+//var port = 3700;
+var port =process.env.PORT;
+var ip= process.env.IP;
  
 /* app.get("/", function(req, res){
     res.send("It works!");
@@ -9,7 +11,7 @@ var port = 3700;
 app.use(express.static(__dirname + '/public'));
 //app.listen(port);
 
-var io = require('socket.io').listen(app.listen(port));
+var io = require('socket.io').listen(app.listen(port,ip));
 
 console.log("Listening on port " + port);
 
